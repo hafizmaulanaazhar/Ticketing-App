@@ -10,7 +10,7 @@ const Sidebar = () => {
     const employeeMenu = [
         {
             path: '/',
-            label: 'Ajukan Pinjaman',
+            label: 'Ticketing',
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -19,7 +19,7 @@ const Sidebar = () => {
         },
         {
             path: '/loans',
-            label: 'Daftar Pinjaman',
+            label: 'Daftar Ticketing',
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -88,7 +88,7 @@ const Sidebar = () => {
                         </svg>
                     </div>
                     <div>
-                        <h1 className="text-xl font-bold">Koperasi App</h1>
+                        <h1 className="text-xl font-bold">Ticketing App</h1>
                         <p className="text-xs text-blue-200 mt-1">
                             {user?.role === 'admin' ? 'Administrator Panel' : 'Employee Portal'}
                         </p>

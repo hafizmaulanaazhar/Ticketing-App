@@ -15,6 +15,7 @@ return new class extends Migration
             $table->decimal('amount', 15, 2);
             $table->string('phone');
             $table->text('address');
+            $table->string('jam');
             $table->enum('status', ['applied', 'approved', 'rejected'])->default('applied');
             $table->timestamps();
         });

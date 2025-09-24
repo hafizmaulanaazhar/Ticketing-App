@@ -40,16 +40,16 @@ const LoanApplication = () => {
     return (
         <div className="max-w-4xl mx-auto p-4">
             <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-gray-800 mb-2">Ajukan Pinjaman</h2>
-                <p className="text-gray-600">Isi formulir di bawah ini untuk mengajukan pinjaman baru</p>
+                <h2 className="text-3xl font-bold text-gray-800 mb-2">Ticketing</h2>
+                <p className="text-gray-600">Isi formulir di bawah ini untuk menambahkan data ticketing</p>
             </div>
 
             <div className="card bg-base-100 shadow-xl border border-gray-100">
                 <div className="card-body p-6 md:p-8">
                     <div className="flex items-center mb-6 p-4 bg-blue-50 rounded-lg">
                         <div>
-                            <h3 className="font-semibold text-blue-800">Informasi Pinjaman</h3>
-                            <p className="text-sm text-blue-600">Pastikan data yang Anda isi sudah benar</p>
+                            <h3 className="font-semibold text-blue-800">Informasi Ticketing</h3>
+                            <p className="text-sm text-blue-600">Pastikan data sudah diisi dengan benar</p>
                         </div>
                     </div>
 
@@ -57,7 +57,7 @@ const LoanApplication = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text font-semibold text-gray-700">Tanggal Pengajuan</span>
+                                    <span className="label-text font-semibold text-gray-700">Tanggal Ticketing</span>
                                 </label>
                                 <div className="relative">
                                     <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
@@ -124,7 +124,7 @@ const LoanApplication = () => {
 
                             <div className="form-control md:col-span-2">
                                 <label className="label">
-                                    <span className="label-text font-semibold text-gray-700">Alamat Lengkap</span>
+                                    <span className="label-text font-semibold text-gray-700">Pilih Status</span>
                                 </label>
                                 <div className="relative">
                                     <span className="absolute top-3 left-3 text-gray-400">
@@ -143,6 +143,25 @@ const LoanApplication = () => {
                                     />
                                 </div>
                             </div>
+                            <div className="form-control md:col-span-2">
+                                <label className="label">
+                                    <span className="label-text font-semibold text-gray-700">Status</span>
+                                </label>
+                                <div className="relative">
+                                    <select
+                                        name="status"
+                                        value={formData.status}
+                                        onChange={handleChange}
+                                        className="select select-bordered w-full max-w-md pl-3 py-2"
+                                        required
+                                    >
+                                        <option value="">-- Pilih Status --</option>
+                                        <option value="applied">Applied</option>
+                                        <option value="approve">Approved</option>
+                                        <option value="reject">Rejected</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
 
                         <div className="flex justify-center mt-8 pt-6 border-t border-gray-100">
@@ -155,10 +174,10 @@ const LoanApplication = () => {
                                     {mutation.isLoading ? (
                                         <>
                                             <span className="loading loading-spinner loading-md mr-2"></span>
-                                            Sedang Mengajukan...
+                                            Sedang Menambahkan Data...
                                         </>
                                     ) : (
-                                        "Ajukan Pinjaman"
+                                        "Tambah Data"
                                     )}
                                 </button>
                             </>
@@ -173,7 +192,7 @@ const LoanApplication = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span>Terjadi kesalahan saat mengajukan pinjaman. Silakan coba lagi.</span>
+                        <span>Terjadi kesalahan saat menginput data. Silakan coba lagi.</span>
                     </div>
                 </div>
             )}

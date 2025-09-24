@@ -29,6 +29,7 @@ class LoanController extends Controller
             'amount' => 'required|numeric|min:0',
             'phone' => 'required|string',
             'address' => 'required|string',
+            'status' => 'required|in:applied,approve,reject',
         ]);
 
         $loan = Loan::create([
